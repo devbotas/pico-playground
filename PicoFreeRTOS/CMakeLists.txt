@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.24)
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 
 project(PicoFreeRTOS C CXX ASM)

@@ -22,13 +22,22 @@
     <BinaryDirectory>build/$(PlatformName)/$(ConfigurationName)</BinaryDirectory>
     <MakeCommandTemplate>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
+      <RemoteHost>
+        <HostName>BuildMachine</HostName>
+        <Transport>BuiltinShortcut</Transport>
+      </RemoteHost>
       <Command>$(VISUALGDB_DIR)/ninja.exe</Command>
       <WorkingDirectory>$(BuildDir)</WorkingDirectory>
       <BackgroundMode xsi:nil="true" />
     </MakeCommandTemplate>
     <CMakeCommand>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
-      <Command>$(SYSPROGS_CMAKE_PATH)</Command>
+      <RemoteHost>
+        <HostName>BuildMachine</HostName>
+        <Transport>BuiltinShortcut</Transport>
+      </RemoteHost>
+      <Command>cmake.exe</Command>
+      <WorkingDirectory>C:\Users\DevBot\AppData\Local\VisualGDB\CMake\bin\</WorkingDirectory>
       <BackgroundMode xsi:nil="true" />
     </CMakeCommand>
     <UpdateSourcesInCMakeFile>true</UpdateSourcesInCMakeFile>
