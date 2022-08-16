@@ -36,7 +36,7 @@ if (EXISTS ${PICO_LWIP_CONTRIB_PATH}/apps/ping/ping.c)
             )
     pico_add_extra_outputs(picow_freertos_ping_nosys)
 
-    add_executable(picow_freertos_ping_sys
+add_subdirectory(${CMAKE_SOURCE_DIR}/Code)
             picow_freertos_ping.c
             ${PICO_LWIP_CONTRIB_PATH}/apps/ping/ping.c
             )
