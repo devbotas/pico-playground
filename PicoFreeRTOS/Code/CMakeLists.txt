@@ -14,14 +14,18 @@ add_executable(${PROJECT_NAME}
 )
 
 # Including all the code files in this subfolder.
-target_include_directories(${PROJECT_NAME} PRIVATE  ${CMAKE_CURRENT_LIST_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE  
+    ${CMAKE_CURRENT_LIST_DIR} 
+    ${FREERTOS_CFG_DIRECTORY}
+)
 
 # Link to built libraries
 target_link_libraries(${PROJECT_NAME} LINK_PUBLIC
     pico_stdlib
     hardware_gpio
     pico_cyw43_arch_none
-    #FreeRTOS
+    FreeRTOS-Kernel
+    FreeRTOS-Kernel-Heap1
 )
 
 # Enable/disable STDIO via USB and UART

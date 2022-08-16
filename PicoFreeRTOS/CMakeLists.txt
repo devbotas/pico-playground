@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.14)
+
 set(FREERTOS_KERNEL_PATH "M:/Code/Forks/pico-FreeRTOS-Kernel")
+set(FREERTOS_CFG_DIRECTORY "${CMAKE_SOURCE_DIR}/Configs")
+
 set(PICO_SDK_PATH "M:/Code/Forks/pico-sdk")
  
 include(pico_sdk_import.cmake)
