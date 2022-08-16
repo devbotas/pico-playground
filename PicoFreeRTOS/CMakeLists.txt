@@ -1,9 +1,15 @@
 cmake_minimum_required(VERSION 3.24)
+set(FREERTOS_KERNEL_PATH "M:/Code/Forks/pico-FreeRTOS-Kernel")
+set(PICO_SDK_PATH "M:/Code/Forks/pico-sdk")
+ 
+include(pico_sdk_import.cmake)
+include(FreeRTOS_Kernel_import.cmake)
+
 include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 
 project(PicoFreeRTOS C CXX ASM)
 include(PicoSDKConfig.cmake)
-add_subdirectory("${PICO_SDK_PATH}/FreeRTOS/portable/ThirdParty/GCC/RP2040" FREERTOS_KERNEL)
+
 pico_sdk_init()
 
 set(CMAKE_C_STANDARD 11)
