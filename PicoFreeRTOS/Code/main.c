@@ -3,9 +3,6 @@
 #include "FreeRTOS.h"
 #include <task.h>
 
-
-
-
 // Set a delay time of exactly 500ms
 const TickType_t ms_delay = 500 / portTICK_PERIOD_MS;
 
