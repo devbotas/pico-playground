@@ -16,7 +16,13 @@ message("FreeRTOS is located at:" ${FREERTOS_KERNEL_PATH})
 add_executable(${PROJECT_NAME}
     main.c
 )
-
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+            WIFI_SSID=\"${WIFI_SSID}\"
+            WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
+            NO_SYS=0            # don't want NO_SYS (generally this would be in your lwipopts.h)
+            LWIP_SOCKET=1       # we need the socket API (generally this would be in your lwipopts.h)
+            PING_USE_SOCKETS=1
+            )
 # Including all the code files in this subfolder.
 target_include_directories(${PROJECT_NAME} PRIVATE  
     ${CMAKE_CURRENT_LIST_DIR} 
@@ -24,14 +30,12 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 # Link to built libraries
-target_link_libraries(${PROJECT_NAME} 
-    pico_cyw43_arch_lwip_threadsafe_background
+target_link_libraries(${PROJECT_NAME}
+    #pico_cyw43_arch_lwip_threadsafe_background
+    pico_cyw43_arch_lwip_sys_freertos
     pico_stdlib
-    #hardware_gpio
-    #pico_cyw43_arch_none
-    #FreeRTOS-Kernel
     FreeRTOS-Kernel-Heap4
-)
+    Profiler)
 
 # Enable/disable STDIO via USB and UART
 #pico_enable_stdio_usb(${PROJECT_NAME} 1)

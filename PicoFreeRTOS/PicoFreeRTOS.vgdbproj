@@ -79,6 +79,14 @@
           <Password>paswordo</Password>
         </Configuration>
         <UnoptimizeDebugBuilds>true</UnoptimizeDebugBuilds>
+        <ReferencedFrameworks>
+          <IDs>
+            <string>com.sysprogs.embedded.semihosting_and_profiler</string>
+          </IDs>
+          <Config>
+            <Entries />
+          </Config>
+        </ReferencedFrameworks>
       </Extension>
     </ProjectModeSettings>
   </Build>
