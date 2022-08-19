@@ -18,4 +18,5 @@ if(DEFINED SYSPROGS_FRAMEWORKS_FILE)
 endif()
 
 
+add_subdirectory(Basic)
 add_subdirectory(Code)
