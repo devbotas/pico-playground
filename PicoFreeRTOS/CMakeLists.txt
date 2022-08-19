@@ -20,3 +20,4 @@ endif()
 
 add_subdirectory(Basic)
 add_subdirectory(Code)
+add_subdirectory(WiFi)
