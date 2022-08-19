@@ -8,7 +8,9 @@ target_include_directories(${TARGET_CLICK} PRIVATE
 )
 
 target_link_libraries(${TARGET_CLICK}
+    pico_cyw43_arch_none
     pico_stdlib
+    Profiler
 )
 
 pico_add_extra_outputs(${TARGET_CLICK})
