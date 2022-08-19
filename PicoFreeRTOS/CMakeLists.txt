@@ -19,5 +19,4 @@ endif()
 
 
 add_subdirectory(Basic)
-add_subdirectory(Push)
 add_subdirectory(Code)
