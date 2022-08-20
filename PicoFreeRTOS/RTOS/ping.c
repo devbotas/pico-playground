@@ -65,13 +65,13 @@ void turn_led_off(__unused void *params) {
 
 void vLaunch(void) {
     TaskHandle_t testTask;
-    xTaskCreate(run_ping_test, "TestMainThread", configMINIMAL_STACK_SIZE, NULL, TEST_TASK_PRIORITY, &testTask);
+    xTaskCreate(run_ping_test, "TestMainThread", 512, NULL, TEST_TASK_PRIORITY, &testTask);
 
     TaskHandle_t handleOn = NULL;
     TaskHandle_t handleOff = NULL;
     
-    xTaskCreate(turn_led_on, "ledon", 256, NULL, tskIDLE_PRIORITY + 1, &handleOn);
-    xTaskCreate(turn_led_off, "ledoff", 256, NULL, tskIDLE_PRIORITY + 1, &handleOff);
+    xTaskCreate(turn_led_on, "ledon", 512, NULL, tskIDLE_PRIORITY + 1, &handleOn);
+    xTaskCreate(turn_led_off, "ledoff", 512, NULL, tskIDLE_PRIORITY + 1, &handleOff);
     
     vTaskStartScheduler();
 }
